@@ -1,23 +1,27 @@
 import { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import Taro from '@tarojs/taro';
 
 export default class Index extends Component {
 
-  componentWillMount () { }
+  componentWillMount() { }
 
-  componentDidMount () { }
+  componentDidMount() { }
 
-  componentWillUnmount () { }
+  componentWillUnmount() { }
 
-  componentDidShow () { }
+  componentDidShow() { }
 
-  componentDidHide () { }
+  componentDidHide() { }
 
-  render () {
+  render() {
+    console.log(`30px===>${Taro.pxTransform(30)}`);
     return (
-      <View className='index'>
-        <Text>Hello world!</Text>
+      <View >
+        <Text className='index'>通过样式转换得到的30px文字</Text>
+        <Text className='index' style={{ fontSize: Taro.pxTransform(30) }}>通过Taro.pxTransform转换得到的30px文字</Text>
+
       </View>
     )
   }
